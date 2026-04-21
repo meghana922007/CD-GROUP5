@@ -322,6 +322,9 @@
             <a href="#" class="nav-item" id="nav-d" data-url="http://localhost:5003" data-name="RBAC Project D (Node.js/Ollama)">
                 <span>🧠 Project D - Smart AI</span>
             </a>
+            <a href="#" class="nav-item" id="nav-compare" data-url="comparison.html" data-name="Ecosystem Comparison & Analytics">
+                <span>📊 Analytics & Comparison</span>
+            </a>
         </div>
 
         <div style="margin-top: auto; padding-top: 20px; border-top: 1px solid var(--border);">
@@ -395,8 +398,13 @@
                 const query = aiInput.value.toLowerCase().trim();
                 let targetId = '';
 
+                if (query.includes('compare') || query.includes('comparison') || query.includes('analytics') || 
+                    query.includes('stats') || query.includes('loc') || query.includes('files') || 
+                    query.includes('difference') || query.includes('versus') || query.includes('vs')) {
+                    targetId = 'nav-compare';
+                }
                 // Project A Keywords (HEALING / AUDIT / VISUALIZATION / ANALYTICS)
-                if (query.includes('audit') || query.includes('heal') || query.includes('fix') || 
+                else if (query.includes('audit') || query.includes('heal') || query.includes('fix') || 
                     query.includes('visual') || query.includes('graph') || query.includes('chart') || 
                     query.includes('diagram') || query.includes('dashboard') || query.includes('metrics') || 
                     query.includes('analytics') || query.includes('plot') || query.includes('report') || 
